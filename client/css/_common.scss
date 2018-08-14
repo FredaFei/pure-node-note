@@ -1,0 +1,53 @@
+body{
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    color: #34495e;
+    background: #fefefe;
+    scroll-behavior: smooth;
+    border-top: 3px solid #c05b4d;
+}
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+@mixin flex($jc:space-between,$ai:center,$dr:row){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $dr;
+}
+@mixin min-screen($min-width: 960px) {
+   @media screen and (min-width: $min-width) {
+     @content;
+   }
+}
+
+@mixin max-screen($max-width: 750px) {
+   @media screen and (max-width: $max-width) {
+     @content;
+   }
+}
+.container{
+  width: 920px;
+  margin: auto;
+}
+.mod-container{
+  margin-top: 30px
+}
+.flex-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+

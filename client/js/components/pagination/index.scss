@@ -1,0 +1,28 @@
+.pagination {
+  margin: 20px 0;
+  .prev,
+  .next {
+    font-weight: 600;
+    font-size: 20px;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+
+  .prev {
+    float: left;
+    &:hover {
+      color: #c05b4d;
+      transform: translateX(-4px);
+    }
+  }
+
+  .next {
+    float: right;
+    &:hover {
+      color: #c05b4d;
+      transform: translateX(4px);
+    }
+  }
+}

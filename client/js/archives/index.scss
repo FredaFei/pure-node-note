@@ -1,0 +1,31 @@
+.archives {
+  .archives-title {
+    font-size: 26px;
+    color: #34495e;
+  }
+  .archives-post-list {
+    padding: 10px 0;
+    cursor: pointer;
+    .archives-post-item {
+      border-left: 1px solid #e6e6e6;
+      padding: 0 20px;
+      &:hover {
+        border-left: 3px #a14639 solid;
+        transform: translateX(4px);
+        transition: .2s ease-out;
+      }
+      .archives-post-time {
+        color: #a8a8aa;
+        font-size: 16px;
+      }
+      .archives-post-name {
+        margin-left: 20px;
+        a {
+          display: inline-block;
+          color: #a14639;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

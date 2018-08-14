@@ -1,0 +1,47 @@
+<footer id="footer" class="blog-footer container">
+    <div class="social-links">
+        <a href="mailto:ahonn95@outlook.com" class="icon-email" title="email"></a>
+        <a href="https://github.com/ahonn" class="icon-GitHub" title="github"></a>
+    </div>
+    <div class="copyright">
+        <span class="power-by">由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动</span>
+        <span class="division">|</span>
+        <span class="theme-info">主题 -<a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a></span>
+        <span class="copyright-year">©2018 - 2018<span class="heart"><i class="iconfont icon-heart"></i></span>
+            <span class="author">Ahonn</span>
+        </span>
+    </div>
+</footer>
+
+    <script>
+        /**
+         * 侧边栏样式
+        */
+        let $mMenu = document.getElementById('mobile-menu')
+        let $header = document.getElementById('header')
+        let $mNav = document.getElementById('mobile-navbar')
+        let $mNavIcon = document.getElementsByClassName('mobile-navbar-icon')[0]
+        let $mainModule = document.getElementsByClassName('main-module')[0]
+        let $html = document.querySelectorAll('html')[0]
+
+        $mNavIcon.addEventListener('click', function (e) {
+            let opened = +$mMenu.getAttribute('data-open')
+            $mainModule.classList.toggle('slide')
+            $header.classList.toggle('slide')
+            if(opened === 1){
+                $mNavIcon.classList.remove('inav-click')
+                $mNavIcon.classList.add('inav-out')
+                $mMenu.setAttribute('data-open',2)
+            }else{
+                $mNavIcon.classList.remove('inav-out')
+                $mNavIcon.classList.add('inav-click')
+                $mMenu.setAttribute('data-open',1)
+            }
+            $mNav.classList.toggle('slide')
+            $mMenu.classList.toggle('show')
+            $html.classList.toggle('overflow')
+        })
+
+    </script>
+</body>
+</html>

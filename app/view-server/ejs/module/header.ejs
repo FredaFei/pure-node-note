@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my Blog</title>
+    <link rel="stylesheet" href="/dist/static/css/common.css">
+    <link rel="stylesheet" href="/dist/static/css/<%- viewName%>.css">
+    <style>
+        .slide {
+            transform: translateX(180px);
+            overflow: hidden;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .overflow {
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="mobile-navbar" class="mobile-navbar">
+        <div class="mobile-header-logo">
+            <a href="/." class="logo">My Blog</a>
+        </div>
+        <div class="mobile-navbar-icon inav-out">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" data-open=2>
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item"><a href="/">首页</a></li>
+            <li class="mobile-menu-item"><a href="/archives/">归档</a></li>
+            <li class="mobile-menu-item"><a href="https://github.com/ahonn">Github</a></li>
+            <li class="mobile-menu-item"><a href="/about">关于</a></li>
+        </ul>
+    </nav>
+    <header id="header" class="blog-header container">
+        <div class="logo-wrapper"><a href="/" class="logo">My Blog</a></div>
+        <nav class="site-navbar">
+            <ul id="menu" class="menu">
+                <li class="menu-item">
+                    <a class="menu-item-link" href="/">首页</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item-link" href="/archives">归档</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item-link" href="https://github.com/">Github</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item-link" href="/about">关于</a>
+                </li>
+                <% if(hasUser) {%>
+                <li class="menu-item">
+                    <a class="menu-item-link" href="/manage">管理博客</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item-link" href="/logout">登出</a>
+                </li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        Object.defineProperty(window, 'hasUser',{
+            configurable:false,
+            enumerable:false,
+            value:<%- hasUser%>,
+            writable:false
+        })
+    </script>
